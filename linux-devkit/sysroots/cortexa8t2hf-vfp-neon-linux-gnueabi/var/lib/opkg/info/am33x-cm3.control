@@ -1,0 +1,11 @@
+Package: am33x-cm3
+Version: 1:1.9.0-r0
+Description: am33x-cm3 version 1.9.0-r0
+ Cortex-M3 binary blob for suspend-resume
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD-3-Clause
+Architecture: cortexa8t2hf-vfp-neon
+OE: am33x-cm3
+Source: git://git.ti.com/ti-cm3-pm-firmware/amx3-cm3.git;protocol=git;branch=ti-v3.14.y

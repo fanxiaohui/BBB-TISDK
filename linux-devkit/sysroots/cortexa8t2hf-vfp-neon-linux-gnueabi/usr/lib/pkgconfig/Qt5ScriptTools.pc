@@ -1,0 +1,14 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/qt5
+
+
+Name: Qt5 ScriptTools
+Description: Qt ScriptTools module
+Version: 5.4.1
+Libs: -L${libdir} -lQt5ScriptTools 
+Libs.private: -lQt5Core -lpthread -L${libdir} -lQt5Script -lQt5Widgets -lQt5Gui -lQt5Core -lpthread -lGLESv2  
+Cflags: -I${includedir}/QtScriptTools -I${includedir}
+Requires: Qt5Core
+

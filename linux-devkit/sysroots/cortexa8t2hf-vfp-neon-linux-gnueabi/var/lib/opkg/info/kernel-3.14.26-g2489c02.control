@@ -1,0 +1,13 @@
+Package: kernel-3.14.26-g2489c02
+Version: 3.14.26-r22h+gitrAUTOINC+2489c022b2-arago1
+Description: sitara-linux-ti-staging version 3.14.26-r22h+gitrAUTOINC+2489c022b2-arago1
+ Linux kernel for TI devices
+Section: kernel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: am335x_evm
+OE: sitara-linux-ti-staging
+Depends: am33x-cm3, kernel-devicetree, kernel-image-3.14.26-g2489c02
+Provides: kernel-3.14.26-g2489c02
+Source: file://configs git://git.ti.com/sitara-linux/sitara-linux.git;protocol=git;branch=sitara-ti-linux-3.14.y file://defconfig

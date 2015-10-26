@@ -1,0 +1,14 @@
+Package: fbset-dev
+Version: 2.1-r4
+Description: The fbset console tool - Development files
+ The fbset console tool.  This package contains symbolic links, header
+ files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: cortexa8t2hf-vfp-neon
+OE: fbset
+Depends: fbset (= 2.1-r4)
+Recommends: libc6-dev, update-alternatives-opkg-dev
+Source: http://ftp.debian.org/debian/pool/main/f/fbset/fbset_2.1.orig.tar.gz file://makefile.patch file://fbset-2.1-fix-makefile-dep.patch

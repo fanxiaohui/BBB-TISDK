@@ -1,0 +1,9 @@
+DIRS :=
+
+DIRS := AES
+DIRS += Certificate_gen
+DIRS += Certificate_info
+DIRS += Gen_public_key
+DIRS += SHA1
+
+DESTDIR ?=

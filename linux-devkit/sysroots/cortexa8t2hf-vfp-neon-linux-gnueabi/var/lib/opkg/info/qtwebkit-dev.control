@@ -1,0 +1,14 @@
+Package: qtwebkit-dev
+Version: 5.4.1-r0-arago4
+Description: qtwebkit version 5.4.1-r0-arago4 - Development files
+ qtwebkit version 5.4.1-r0-arago4.  This package contains symbolic links,
+ header files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD & LGPLv2+ | GPL-2.0
+Architecture: cortexa8t2hf-vfp-neon
+OE: qtwebkit
+Depends: qtwebkit (= 5.4.1-r0-arago4)
+Recommends: libgcc-s-dev, gstreamer-dev, libjpeg-dev, libz-dev, qtbase-dev, libicui18n-dev, icu-dev, qtlocation-dev, sqlite3-dev, libgstpbutils-0.10-dev, libicuuc-dev, libicudata-dev, gst-plugins-base-dev, libgstinterfaces-0.10-dev, qtmultimedia-dev, libstdc++-dev, libxslt-dev, libgstvideo-0.10-dev, libc6-dev, libsqlite3-dev, libxml2-dev, libqt5sensors-dev, libpng16-dev, qtdeclarative-dev, libglib-2.0-dev, libgstapp-0.10-dev, libleveldb-dev
+Source: http://download.qt-project.org/official_releases/qt/5.4/5.4.1/submodules/qtwebkit-opensource-src-5.4.1.tar.xz file://0001-qtwebkit-fix-QA-issue-bad-RPATH.patch file://0002-Remove-TEXTREL-tag-in-x86.patch file://GraphicsSurfaceGL_NoX.cpp.patch file://GraphicsSurfaceToken.h.patch file://0001-Target.pri-update-to-use-GL_NoX-version-of-GraphicsS.patch file://WebCore.pri.patch

@@ -1,0 +1,14 @@
+Package: gdbserver
+Version: linaro-7.6.1-r2013.10
+Description: GNU debugger
+ GNU debugger.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2 & GPLv3 & LGPLv2 & LGPLv3
+Architecture: cortexa8t2hf-vfp-neon
+OE: gdb
+Homepage: http://www.gnu.org/software/gdb/
+Depends: libc6 (>= 2.15)
+Recommends: glibc-thread-db
+Source: https://releases.linaro.org/13.10/components/toolchain/gdb-linaro/gdb-linaro-7.6.1-2013.10.tar.bz2

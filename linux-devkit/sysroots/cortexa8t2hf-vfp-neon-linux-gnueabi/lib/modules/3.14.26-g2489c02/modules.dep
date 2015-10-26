@@ -1,0 +1,4 @@
+extra/services4/3rdparty/dc_ti335x_linux/omaplfb.ko: extra/pvrsrvkm.ko
+extra/pvrsrvkm.ko:
+extra/cryptodev.ko:
+extra/services4/3rdparty/bufferclass_ti/bufferclass_ti.ko: extra/pvrsrvkm.ko

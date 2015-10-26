@@ -1,0 +1,16 @@
+/usr/include/leveldb/dumpfile.h
+/usr/include/leveldb/status.h
+/usr/include/leveldb/options.h
+/usr/include/leveldb/table_builder.h
+/usr/include/leveldb/cache.h
+/usr/include/leveldb/c.h
+/usr/include/leveldb/write_batch.h
+/usr/include/leveldb/slice.h
+/usr/include/leveldb/comparator.h
+/usr/include/leveldb/iterator.h
+/usr/include/leveldb/filter_policy.h
+/usr/include/leveldb/env.h
+/usr/include/leveldb/db.h
+/usr/include/leveldb/
+/usr/include/leveldb/table.h
+/usr/lib/libleveldb.so

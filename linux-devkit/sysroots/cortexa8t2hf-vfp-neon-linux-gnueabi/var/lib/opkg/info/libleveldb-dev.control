@@ -1,0 +1,17 @@
+Package: libleveldb-dev
+Version: 1.18+git0+803d69203a-r0
+Description: LevelDB is a fast key-value storage library - Development files
+ LevelDB is a fast key-value storage library that provides an ordered
+ mapping from string keys to string values  This package contains symbolic
+ links, header files, and related items necessary for software
+ development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD-3-Clause
+Architecture: cortexa8t2hf-vfp-neon
+OE: leveldb
+Homepage: http://leveldb.googlecode.com
+Depends: libleveldb1 (= 1.18+git0+803d69203a-r0)
+Recommends: libc6-dev, libgcc-s-dev, libstdc++-dev
+Source: git://github.com/google/leveldb.git file://0001-Explicitly-disable-tcmalloc.patch

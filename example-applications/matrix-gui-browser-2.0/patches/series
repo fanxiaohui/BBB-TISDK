@@ -1,0 +1,3 @@
+qt5-webkit.patch -p1
+qt5-gui-widgets-move.patch -p1
+0001-Makefile.build-with-Qt5-use-qmake-available-in-PATH.patch -p1

@@ -1,0 +1,3 @@
+0001-Disable-installing-header-file-provided-by-another-p.patch -p1
+0002-In-the-3.13-rc1-Linux-kernel-the-INIT_COMPLETION-mac.patch -p1
+0001-allow-for-cross-compiling-cryptodev.patch -p1

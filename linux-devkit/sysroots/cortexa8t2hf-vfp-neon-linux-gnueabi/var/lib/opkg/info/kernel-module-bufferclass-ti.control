@@ -1,0 +1,12 @@
+Package: kernel-module-bufferclass-ti
+Version: 5.01.01.02-r22b
+Description: bufferclass-ti kernel module
+ bufferclass-ti kernel module
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: am335x_evm
+OE: omap3-sgx-modules
+Depends: kernel-module-pvrsrvkm, kernel-3.14.26-g2489c02
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/gfxsdk/5_01_01_02/exports/Graphics_SDK_setuplinux_hardfp_5_01_01_02.bin

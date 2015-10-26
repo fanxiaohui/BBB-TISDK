@@ -1,0 +1,15 @@
+Package: gst-ffmpeg-dev
+Version: 0.10.13-r8-arago0
+Description: FFmpeg-based GStreamer plug-in - Development files
+ FFmpeg-based GStreamer plug-in.  This package contains symbolic links,
+ header files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+ & LGPLv2+ & (GPLv2+ & LGPLv2.1+)
+Architecture: cortexa8t2hf-vfp-neon
+OE: gst-ffmpeg
+Homepage: http://www.gstreamer.net/
+Depends: gst-ffmpeg (= 0.10.13-r8-arago0)
+Recommends: gst-plugins-base-dev, libgcc-s-dev, gstreamer-dev, libavcodec-dev, libavutil-dev, libglib-2.0-dev, libpostproc-dev, libav-dev, libgstinterfaces-0.10-dev, libgstaudio-0.10-dev, libffi-dev, libgstvideo-0.10-dev, libc6-dev, libswscale-dev, libz-dev, libbz2-dev, libavformat-dev, bzip2-dev, libgstpbutils-0.10-dev, libxml2-dev
+Source: http://gstreamer.freedesktop.org/src/gst-ffmpeg/gst-ffmpeg-0.10.13.tar.bz2 file://lower-rank.diff file://configure-fix.patch file://h264_qpel_mmx.patch file://libav_e500mc.patch file://libav_e5500.patch file://gst-ffmpeg-CVE-2013-3674.patch file://0001-avformat-mpegtsenc-Check-data-array-size-in-mpegts_w.patch file://0001-vqavideo-check-chunk-sizes-before-reading-chunks.patch file://0001-avcodec-msrle-use-av_image_get_linesize-to-calculate.patch file://0001-huffyuvdec-Skip-len-0-cases.patch file://0001-huffyuvdec-Check-init_vlc-return-codes.patch file://0001-alsdec-check-block-length.patch file://0001-pgssubdec-check-RLE-size-before-copying.-Fix-out-of-.patch file://0001-atrac3dec-Check-coding-mode-against-channels.patch file://0001-eamad-fix-out-of-array-accesses.patch file://0001-mjpegdec-check-SE.patch file://0001-alac-fix-nb_samples-order-case.patch file://0001-h264-correct-ref-count-check-and-limit-fix-out-of-ar.patch file://0001-roqvideodec-check-dimensions-validity.patch file://0001-aacdec-check-channel-count.patch file://0001-pngdec-filter-dont-access-out-of-array-elements-at-t.patch file://0001-error_concealment-Check-that-the-picture-is-not-in-a.patch file://0001-vp3-fix-oob-read-for-negative-tokens-and-memleaks-on.patch file://0001-vp3-Copy-all-3-frames-for-thread-updates.patch file://0001-h264_sei-Fix-infinite-loop.patch file://0001-avcodec-parser-reset-indexes-on-realloc-failure.patch file://0001-avcodec-rpza-Perform-pointer-advance-and-checks-befo.patch file://gst-ffmpeg-CVE-2013-0855.patch file://0001-qdm2dec-fix-buffer-overflow.patch file://0001-huffyuvdec-check-width-more-completely-avoid-out-of-.patch file://0001-smackerdec-Check-that-the-last-indexes-are-within-th.patch file://0001-avcodec-dsputil-fix-signedness-in-sizeof-comparissio.patch file://0001-error-concealment-initialize-block-index.patch file://0001-qdm2-check-array-index-before-use-fix-out-of-array-a.patch file://0001-lavf-compute-probe-buffer-size-more-reliably.patch file://0001-ffserver-set-oformat.patch file://0001-h264-set-parameters-from-SPS-whenever-it-changes.patch file://0001-h264-skip-error-concealment-when-SPS-and-slices-are-.patch

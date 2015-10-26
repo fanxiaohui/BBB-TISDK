@@ -1,0 +1,11 @@
+Package: qtwebkit-mkspecs
+Version: 5.4.1-r0-arago4
+Description: qtwebkit version 5.4.1-r0-arago4
+ qtwebkit version 5.4.1-r0-arago4.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD & LGPLv2+ | GPL-2.0
+Architecture: cortexa8t2hf-vfp-neon
+OE: qtwebkit
+Source: http://download.qt-project.org/official_releases/qt/5.4/5.4.1/submodules/qtwebkit-opensource-src-5.4.1.tar.xz file://0001-qtwebkit-fix-QA-issue-bad-RPATH.patch file://0002-Remove-TEXTREL-tag-in-x86.patch file://GraphicsSurfaceGL_NoX.cpp.patch file://GraphicsSurfaceToken.h.patch file://0001-Target.pri-update-to-use-GL_NoX-version-of-GraphicsS.patch file://WebCore.pri.patch

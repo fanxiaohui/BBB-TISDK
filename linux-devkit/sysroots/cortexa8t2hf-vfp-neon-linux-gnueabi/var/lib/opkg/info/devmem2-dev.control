@@ -1,0 +1,15 @@
+Package: devmem2-dev
+Version: 1.0-r7
+Description: Simple program to read/write from/to any location in memory - Development files
+ Simple program to read/write from/to any location in memory.  This
+ package contains symbolic links, header files, and related items
+ necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: cortexa8t2hf-vfp-neon
+OE: devmem2
+Depends: devmem2 (= 1.0-r7)
+Recommends: libc6-dev
+Source: http://www.lartmaker.nl/lartware/port/devmem2.c file://devmem2-fixups-2.patch;apply=yes;striplevel=0

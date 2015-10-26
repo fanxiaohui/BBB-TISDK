@@ -1,0 +1,15 @@
+Package: alsa-lib-dev
+Version: 1.0.27.2-r0
+Description: ALSA sound library - Development files
+ ALSA sound library.  This package contains symbolic links, header files,
+ and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: LGPLv2.1 & GPLv2+
+Architecture: cortexa8t2hf-vfp-neon
+OE: alsa-lib
+Homepage: http://www.alsa-project.org
+Depends: alsa-lib (= 1.0.27.2-r0), libasound2
+Recommends: libc6-dev, libasound-dev
+Source: ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.0.27.2.tar.bz2 file://Check-if-wordexp-function-is-supported.patch file://fix-tstamp-declaration.patch file://Update-iatomic.h-functions-definitions-for-mips.patch

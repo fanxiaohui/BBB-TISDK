@@ -1,0 +1,16 @@
+Package: libc6-dbg
+Version: 2.15-r2-arago9
+Description: external-linaro-toolchain version 2013.03-r2-arago9 - Debugging files
+ external-linaro-toolchain version 2013.03-r2-arago9.  This package
+ contains ELF symbols and related sources for debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: cortexa8t2hf-vfp-neon
+OE: external-linaro-toolchain
+Recommends: libgcc-dbg
+Provides: libc-dbg, glibc-dbg
+Replaces: libc-dbg
+Conflicts: libc-dbg
+Source: file://SUPPORTED

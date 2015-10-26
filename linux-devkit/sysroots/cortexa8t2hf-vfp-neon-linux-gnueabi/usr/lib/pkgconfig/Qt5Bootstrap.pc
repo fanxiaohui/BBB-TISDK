@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/home/gtbldadm/ti/oe-layersetup/build-CORTEX_1/arago-tmp-external-linaro-toolchain/sysroots/am335x-evm/usr/lib
+includedir=${prefix}/include/qt5
+
+
+Name: Qt5 Bootstrap
+Description: Qt Bootstrap module
+Version: 5.4.1
+Libs: -L${libdir} -lQt5Bootstrap 
+Libs.private: -lpthread   
+Cflags: -I${includedir}/QtBootstrap -I${includedir}
+

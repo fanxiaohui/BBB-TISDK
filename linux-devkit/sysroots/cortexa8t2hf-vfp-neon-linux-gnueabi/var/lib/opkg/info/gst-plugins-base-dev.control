@@ -1,0 +1,16 @@
+Package: gst-plugins-base-dev
+Version: 0.10.36-r8
+Description: Plugins for the GStreamer multimedia framework - Development files
+ Plugins for the GStreamer multimedia framework.  This package contains
+ symbolic links, header files, and related items necessary for software
+ development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+ & LGPLv2+
+Architecture: cortexa8t2hf-vfp-neon
+OE: gst-plugins-base
+Homepage: http://gstreamer.freedesktop.org/
+Depends: libgstriff-0.10-0, libgstpbutils-0.10-0, libgstaudio-0.10-0, libgstvideo-0.10-0, libgstapp-0.10-0, libgstnetbuffer-0.10-0, libgstfft-0.10-0, libgstinterfaces-0.10-0, libgsttag-0.10-0, libgstrtp-0.10-0, libgstsdp-0.10-0, libgstcdda-0.10-0, libgstrtsp-0.10-0, gst-plugins-base (= 0.10.36-r8)
+Recommends: libtheora-dev, gstreamer-dev, libvorbis-dev, libogg-dev, alsa-lib-dev, libvorbisidec-dev, liboil-dev, util-linux-dev
+Source: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-0.10.36.tar.bz2 file://gst-plugins-base-tremor.patch file://configure.ac-fix-subparse-plugin.patch

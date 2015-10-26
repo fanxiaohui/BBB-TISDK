@@ -1,0 +1,12 @@
+Package: gst-plugins-good
+Version: 0.10.31-r8-arago2
+Description: Plugins for the GStreamer multimedia framework
+ Plugins for the GStreamer multimedia framework.
+Section: multimedia
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+ & LGPLv2.1+
+Architecture: cortexa8t2hf-vfp-neon
+OE: gst-plugins-good
+Homepage: http://gstreamer.freedesktop.org/
+Source: http://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-0.10.31.tar.bz2 file://0001-v4l2-fix-build-with-recent-kernels-the-v4l2_buffer-i.patch file://0001-v4l2_calls-define-V4L2_CID_HCENTER-and-V4L2_CID_VCEN.patch

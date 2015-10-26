@@ -1,0 +1,12 @@
+Package: libgles-omap3-flipwsegl-es3
+Version: 5.01.01.02-r38.1
+Description: libgles-omap3 version 5.01.01.02-r38.1
+ libGLES for the omap3
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: TI-TSPA
+Architecture: cortexa8t2hf-vfp-neon
+OE: libgles-omap3
+Depends: libc6 (>= 2.15)
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/gfxsdk/5_01_01_02/exports/Graphics_SDK_setuplinux_hardfp_5_01_01_02.bin file://cputype file://rc.pvr file://99-bufferclass.rules

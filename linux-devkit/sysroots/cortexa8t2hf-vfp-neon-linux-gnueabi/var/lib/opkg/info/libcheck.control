@@ -1,0 +1,14 @@
+Package: libcheck
+Version: 0.9.12-r0
+Description: Check - unit testing framework for C code
+ Check - unit testing framework for C code.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: LGPLv2.1+
+Architecture: cortexa8t2hf-vfp-neon
+OE: libcheck
+Homepage: http://check.sourceforge.net/
+Depends: libgcc-s1 (>= 4.7.3), gawk, libc6 (>= 2.15)
+Replaces: check (<= 0.9.5)
+Source: http://downloads.sourceforge.net/check/check-0.9.12.tar.gz

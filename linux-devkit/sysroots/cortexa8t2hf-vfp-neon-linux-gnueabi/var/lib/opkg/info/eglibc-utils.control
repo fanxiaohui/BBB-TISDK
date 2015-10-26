@@ -1,0 +1,13 @@
+Package: eglibc-utils
+Version: 2.15-r2-arago9
+Description: Miscellaneous utilities provided by eglibc
+ Miscellaneous utilities including getconf, iconf, locale, gencat,
+ tzselect, zic, rpcinfo, ...
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: cortexa8t2hf-vfp-neon
+OE: external-linaro-toolchain
+Provides: glibc-utils
+Source: file://SUPPORTED

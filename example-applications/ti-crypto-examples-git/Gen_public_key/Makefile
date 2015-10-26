@@ -1,0 +1,159 @@
+#   ----------------------------------------------------------------------------
+#  @file   Makefile
+#
+#  @path   
+#
+#  @desc   Makefile for public key generation demo for armv7-a (Debug and Release versions)
+#
+#  @ver    1.10
+#   ----------------------------------------------------------------------------
+#  Copyright (c) Texas Instruments Incorporated 2002-2012
+#
+#  Use of this software is controlled by the terms and conditions found in the
+#  license agreement under which this software has been supplied or provided.
+#
+
+#   ----------------------------------------------------------------------------
+#   Included defined variables
+#   ----------------------------------------------------------------------------
+-include ../../../Rules.make
+
+#   ----------------------------------------------------------------------------
+#   Variables passed in externally
+#   ----------------------------------------------------------------------------
+CFLAGS ?= -march=armv7-a
+CROSS_COMPILE ?=
+
+#   ----------------------------------------------------------------------------
+#   Name of the Linux compiler
+#   ----------------------------------------------------------------------------
+CC ?= $(CROSS_COMPILE)gcc
+
+#   ----------------------------------------------------------------------------
+#   General options, sources and libraries
+#   ----------------------------------------------------------------------------
+NAME := gen_publickey
+SRCS := gen_publickey.c
+HDRS := 
+OBJS :=
+DEBUG :=
+BIN := Gen_publickey
+
+
+#   ----------------------------------------------------------------------------
+#   Compiler and Linker flags for Debug
+#   ----------------------------------------------------------------------------
+OBJDIR_D := Debug
+BINDIR_D := $(OBJDIR_D)
+LIBS_D := $(LIBS) -lssl -lcrypto
+OBJS_D := $(SRCS:%.c=$(OBJDIR_D)/%.o)
+ALL_DEBUG := -g3 -gdwarf-2
+
+#   ----------------------------------------------------------------------------
+#   Compiler and Linker flags for Release
+#   ----------------------------------------------------------------------------
+OBJDIR_R := Release
+BINDIR_R := $(OBJDIR_R)
+LIBS_R := $(LIBS) -lssl -lcrypto
+OBJS_R := $(SRCS:%.c=$(OBJDIR_R)/%.o)
+ALL_RELEASE := -O3
+
+#   ----------------------------------------------------------------------------
+#   Compiler include directories 
+#   ----------------------------------------------------------------------------
+INCLUDES := 
+
+#   ----------------------------------------------------------------------------
+#   All compiler options to be passed to the command line
+#   ----------------------------------------------------------------------------
+ALL_CFLAGS ?= $(INCLUDES)                  \
+              -c                           \
+              $(CFLAGS)
+
+LDFLAGS ?=    -Wl,--hash-style=gnu         \
+              -Wl,-O1
+
+#   ----------------------------------------------------------------------------
+#   Compiler symbol definitions 
+#   ----------------------------------------------------------------------------
+DEFS := -DTIME
+
+#   ----------------------------------------------------------------------------
+#   Compiler and Linker procedure
+#   From this point and on changes are very unlikely.
+#   ----------------------------------------------------------------------------
+.PHONY: all
+all: release
+
+#   ----------------------------------------------------------------------------
+#   Creating directory... 
+#   ----------------------------------------------------------------------------
+directory_debug:
+	@if [ ! -d Debug ]; then \
+		mkdir Debug;\
+	fi
+directory_release:
+	@if [ ! -d Release ]; then \
+		mkdir Release;\
+	fi
+#   ----------------------------------------------------------------------------
+#   Building Debug... 
+#   ----------------------------------------------------------------------------
+.PHONY: debug
+debug: directory_debug $(BINDIR_D)/$(BIN)
+
+$(BINDIR_D)/$(BIN): $(OBJS_D)
+	@echo Compiling Debug...
+	$(CC) -o $@ $(OBJS_D) $(LIBS_D) $(LDFLAGS)  -Wl,-Map,$(BINDIR_D)/$(NAME).map
+
+$(OBJDIR_D)/%.o : %.c $(HDRS)
+	$(CC) $(ALL_DEBUG) $(DEFS) $(ALL_CFLAGS) -o$@ $<
+
+#   ----------------------------------------------------------------------------
+#   Building Release... 
+#   ----------------------------------------------------------------------------
+.PHONY: release
+release: directory_release $(BINDIR_R)/$(BIN)
+
+$(BINDIR_R)/$(BIN): $(OBJS_R)
+	@echo Compiling Release...
+	$(CC) -o $@ $(OBJS_R) $(LIBS_R) $(LDFLAGS) -Wl,-Map,$(BINDIR_R)/$(NAME).map
+
+$(OBJDIR_R)/%.o : %.c $(HDRS)
+	$(CC) $(DEFS) $(ALL_RELEASE) $(ALL_CFLAGS) -o$@ $<
+
+.PHONY: clean
+clean:
+	@rm -fr $(OBJDIR_D)/
+	@rm -fr $(OBJDIR_R)/
+
+install_debug: debug
+	@if [ ! -d $(DESTDIR) ] ; then \
+		echo "The extracted target filesystem directory doesn't exist."; \
+		echo "Please run setup.sh in the SDK's root directory and then try again."; \
+		exit 1; \
+	fi
+	@install -d $(DESTDIR)/usr/bin
+	@if [ -e Debug/Gen_publickey ] ; then \
+		install openssl_gen_pubkey.sh $(DESTDIR)/usr/bin/ ; \
+		install Debug/Gen_publickey $(DESTDIR)/usr/bin/ ; \
+		echo "Gen_publickey debug version installed."; \
+	else \
+		echo "Gen_publickey debug version not built - nothing to install!"; \
+	fi
+
+install: release
+	@if [ ! -d $(DESTDIR) ] ; then \
+		echo "The extracted target filesystem directory doesn't exist."; \
+		echo "Please run setup.sh in the SDK's root directory and then try again."; \
+		exit 1; \
+	fi
+	@install -d $(DESTDIR)/usr/bin
+	@if [ -e Release/Gen_publickey ] ; then \
+		install openssl_gen_pubkey.sh $(DESTDIR)/usr/bin/ ; \
+		install Release/Gen_publickey $(DESTDIR)/usr/bin/ ; \
+		echo "Gen_publickey release version installed."; \
+	else \
+		echo "Gen_publickey release version not built - nothing to install!"; \
+	fi
+

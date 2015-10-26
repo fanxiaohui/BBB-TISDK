@@ -1,0 +1,14 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/qt5
+
+
+Name: Qt5 3DQuick
+Description: Qt 3DQuick module
+Version: 5.3.0
+Libs: -L${libdir} -lQt53DQuick 
+Libs.private: -L${libdir} -lQt53D -lQt5Quick -lQt5OpenGL -lQt5Widgets -lQt5Gui -lQt5Qml -lQt5Network -lQt5Core -lpthread -lQt5Network -lQt5Core -lpthread -lGLESv2  
+Cflags: -I${includedir}/Qt3DQuick -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Qml Qt5Quick Qt53D
+
